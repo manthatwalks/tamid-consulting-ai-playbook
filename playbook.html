@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Playbook — TAMID Consulting AI Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .paper { max-width: 720px; margin: 0 auto; }
+  .paper p {
+    color: #3F3F46; margin: 14px 0;
+    font-size: 17px; line-height: 1.7;
+    font-family: "Source Serif 4", Georgia, serif;
+    letter-spacing: -0.005em;
+  }
+  .paper h2 {
+    font-size: 26px; margin-top: 56px; margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+  .paper h3 {
+    font-size: 18px; margin-top: 32px;
+    color: var(--ink); font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .paper ul, .paper ol {
+    color: #3F3F46; padding-left: 22px;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 17px; line-height: 1.7;
+  }
+  .paper li { margin: 6px 0; }
+  .paper .sectnum {
+    color: var(--accent);
+    margin-right: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+  }
+  .paper .meta {
+    color: var(--ink-faint); font-size: 13px;
+    margin-bottom: 32px;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.005em;
+  }
+  .paper blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 22px 0; padding: 8px 20px;
+    color: var(--ink-dim); font-style: italic;
+    font-family: "Source Serif 4", Georgia, serif;
+  }
+  .toolref {
+    background: #FAFAF8;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: "Inter", sans-serif;
+  }
+  .toolref .tname {
+    color: var(--accent); font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+  }
+  .toolref p {
+    margin: 4px 0; font-size: 14px;
+    color: var(--ink-dim); line-height: 1.55;
+    font-family: "Inter", sans-serif;
+  }
+  .refs {
+    font-size: 14px; color: var(--ink-dim);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+  }
+  .refs li { margin: 6px 0; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">TAMID Consulting · <span>AI Playbook</span></div>
+    <ul>
+      <li><a class="navlink" href="index.html">Home</a></li>
+      <li><a class="navlink" href="playbook.html">Playbook</a></li>
+      <li><a class="navlink" href="prompts.html">Prompts</a></li>
+      <li><a class="navlink" href="rollout.html">Rollout</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <a class="back-link" href="index.html">← Back to overview</a>
+  <span class="eyebrow">Deliverable 01</span>
+  <h1>An AI Toolkit for TAMID Consulting Teams</h1>
+  <p class="lede">A structured reference covering model selection, competitive research, data synthesis, slide production, and ethical guardrails — organized around the specific services and agentic systems available to student consultants in 2026.</p>
+</section>
+
+<section>
+<div class="paper">
+
+<p class="meta">TAMID Consulting AI Playbook · Version 1.0</p>
+
+<h2>Introduction</h2>
+<p>Artificial intelligence has moved from novelty to infrastructure across the professional services industry. Management consulting firms including McKinsey, BCG, and Bain now deploy proprietary copilots across their engagement lifecycle, and client-facing deliverables are increasingly expected to reflect the efficiency gains these systems provide. Within TAMID, adoption has been uneven. Teams that use AI aggressively often do so without discipline, yielding generic output and unverified claims; teams that avoid AI entirely cede a material advantage to peers.</p>
+<p>This document addresses the gap. It presents a structured approach to AI usage in consulting workflows, grounded in the specific tools available to student teams as of 2026. It is organized into five sections: a how-to-use guide covering model selection and workspace configuration; workflows for competitive analysis; methods for data cleaning and synthesis; a treatment of AI-assisted slide drafting; and a final section on risks and ethical guidelines. Each section names the services and agents that TAMID consultants should actively use, rather than offering general-purpose advice.</p>
+<p>The recommendations that follow assume the reader has baseline familiarity with conversational AI interfaces but has not systematically integrated these tools into a consulting workflow. Where a tool requires a paid subscription, this is noted; where free tiers are sufficient for TAMID use cases, that is noted as well.</p>
+
+<h2><span class="sectnum">1.</span>How-to-Use Guide</h2>
+
+<p>Effective AI usage in a consulting context begins with two choices that precede any prompt: selecting the appropriate model for the task, and configuring a workspace that preserves context across a project engagement. Consultants who skip these decisions tend to default to whichever interface they opened first, producing inconsistent results across a single deliverable.</p>
+
+<h3>1.1 Model Selection</h3>
+
+<p>Frontier AI models differ meaningfully in their strengths. Treating them as interchangeable — a common pattern among new users — produces avoidable quality losses. The following taxonomy reflects current capability as of early 2026.</p>
+
+<div class="toolref">
+  <p class="tname">Claude Opus 4.7 (Anthropic)</p>
+  <p>Use for deep reasoning tasks: financial modeling logic, strategic frameworks, multi-step argument construction, and work requiring rigorous self-critique. The model's extended thinking mode allocates additional computation to problems before responding. Appropriate for the analytical core of a deliverable.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Claude Sonnet 4.6 (Anthropic)</p>
+  <p>The recommended default for daily consulting work. Strong general writing, coding, and analysis at substantially lower latency and cost than Opus. Most drafting, summarization, and first-pass synthesis should route here.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">GPT-5.5 (OpenAI)</p>
+  <p>Comparable to Claude Opus on most reasoning benchmarks, with particular strength in structured output (tables, JSON) and image-based reasoning. Useful as a second opinion when a deliverable's analytical core needs cross-validation across model families.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Kimi K2 (Moonshot)</p>
+  <p>Use for high-volume, low-stakes work where speed and cost matter more than maximum capability — first-pass summarization, formatting, simple rewrites. Substantially cheaper per token than frontier models and adequate for tasks where the human will review every line of output.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Gemini 3.1 Pro (Google)</p>
+  <p>Optimal for long-context work. The multi-million-token context window allows a team to load an entire client data room — decks, 10-Ks, transcripts, reports — into a single conversation. No competing model matches this capacity for cross-document synthesis.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Perplexity Pro</p>
+  <p>Treat Perplexity as a different category: a search-grounded model rather than a general assistant. Every claim is linked to a source. Use it whenever a deliverable requires defensible citations, and avoid raw frontier models for that purpose.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Live Model Reference</p>
+  <p>Model rankings shift on a quarterly cadence. For current performance comparisons across speed, cost, and intelligence, consult <a href="https://artificialanalysis.ai" target="_blank" rel="noopener">artificialanalysis.ai</a> rather than relying on the recommendations above as static truth.</p>
+</div>
+
+<h3>1.2 Persistent Context Workspaces</h3>
+
+<p>A single consulting engagement generates fifty to two hundred pages of context — the client brief, interview notes, industry primers, prior deliverables. Reloading this material into every new conversation is both tedious and error-prone. Modern AI tools provide persistent workspaces that address this problem directly.</p>
+
+<ul>
+  <li><strong>Claude Projects</strong> allow a team to attach the client brief, style guide, and reference documents once, and have every subsequent conversation within the project inherit that context. Custom instructions at the project level enforce tone and source-grading conventions.</li>
+  <li><strong>Custom GPTs</strong> offer equivalent functionality within the OpenAI ecosystem, with additional support for tool use and actions against external APIs.</li>
+  <li><strong>Perplexity Spaces</strong> combine persistent context with web-grounded search, which is the correct configuration for ongoing competitive monitoring.</li>
+  <li><strong>NotebookLM</strong> (Google) is purpose-built for grounded synthesis across a fixed document set and produces no output not traceable to source material. It is particularly well-suited to literature review and interview synthesis.</li>
+</ul>
+
+<p>A TAMID team should establish one of these workspaces at project kickoff and treat it as the team's shared memory for the engagement.</p>
+
+<h3>1.3 Division of Labor</h3>
+
+<p>The principle that separates effective AI usage from superficial usage is clarity about what a model should and should not do. AI systems are extraordinary at mechanical transformation — restructuring, summarization, reformatting, code generation — and unreliable at judgment tasks such as deciding what a client should do, what a number means in context, or which of two strategic options is superior. The consultant's role is to own the judgment layer and delegate the mechanical layer systematically. A deliverable built primarily on delegated judgment is easily identified in client review and reliably erodes credibility.</p>
+
+<h2><span class="sectnum">2.</span>Competitive Analysis Workflows</h2>
+
+<p>Competitive analysis is among the most time-consuming tasks in a typical TAMID engagement and among the most amenable to agentic AI systems. The workflows below replace the traditional approach — manual competitor discovery, homepage-by-homepage synthesis, ad-hoc positioning notes — with a structured pipeline that completes in hours rather than days.</p>
+
+<h3>2.1 Deep Research Agents</h3>
+
+<p>The most significant development in consulting-relevant AI over the past eighteen months is the emergence of agentic deep research systems. These services autonomously plan and execute multi-step research tasks, visiting dozens of sources and producing cited reports. They have replaced the first two days of most TAMID competitive analyses.</p>
+
+<div class="toolref">
+  <p class="tname">OpenAI Deep Research</p>
+  <p>Available on ChatGPT Plus and higher tiers. Executes research tasks that may run fifteen to thirty minutes, visiting fifty or more sources and producing a structured report with inline citations. Best suited to bounded questions with a clear deliverable shape.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Gemini Deep Research</p>
+  <p>Included with Google One AI Premium. Produces notably longer reports than OpenAI's equivalent and integrates directly with Google Docs. Strong on regulatory, policy, and market-structure questions.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Perplexity Deep Research</p>
+  <p>The lowest-friction option for rapid competitive scans. Shorter output than the OpenAI or Gemini equivalents but with stronger source grounding and faster completion.</p>
+</div>
+
+<p>A recommended protocol for a competitive analysis engagement is to run the same research brief across two of these agents in parallel, then reconcile the outputs. Points of agreement are high-confidence findings; points of divergence are the questions worth investigating manually.</p>
+
+<h3>2.2 Semantic Competitor Discovery</h3>
+
+<p>Traditional competitor discovery relies on keyword search, which fails to surface competitors whose marketing language differs from the client's. Embedding-based semantic search resolves this limitation by identifying companies whose products, not their marketing copy, resemble the target.</p>
+
+<ul>
+  <li><strong>Exa.ai</strong> exposes a semantic search API specifically designed for competitive discovery. A query such as "companies like [CLIENT] that serve [ICP]" returns semantically similar organizations rather than keyword matches.</li>
+  <li><strong>Tracxn</strong> and <strong>Crunchbase</strong> remain useful for funding and firmographic data; free or student-accessible tiers are typically sufficient for TAMID projects.</li>
+  <li><strong>Similarweb</strong> provides traffic and engagement data for the digital layer of competitive analysis.</li>
+</ul>
+
+<h3>2.3 Positioning Extraction</h3>
+
+<p>Once a competitive set is assembled, the next task is extracting each competitor's positioning in comparable terms. Feeding a competitor's homepage, recent press, and most recent funding announcement into a frontier model, with an explicit schema for the desired output, produces a normalized comparison table in minutes. The schema should force every competitor into the same dimensions — pricing, ideal customer profile, geographic reach, stated differentiation, observed weakness — even when the source material does not volunteer this information.</p>
+
+<p>For engagements involving private companies or specialized verticals, <strong>AlphaSense</strong> provides access to expert call transcripts and analyst reports that substantially improve the quality of positioning analysis. Many universities maintain institutional subscriptions accessible to TAMID members.</p>
+
+<h2><span class="sectnum">3.</span>Data Cleaning and Synthesis Methods</h2>
+
+<p>Consulting deliverables frequently depend on structured outputs derived from unstructured inputs: a themed findings document synthesized from twenty interview transcripts, a clean financial dataset assembled from three incompatible CSV exports, a single-page summary of a two-hundred-page industry report. Each of these tasks has a corresponding AI-native workflow that produces better results in less time than the manual approach.</p>
+
+<h3>3.1 Transcription and Interview Capture</h3>
+
+<p>Primary research workflows begin with transcription quality. Poor transcripts degrade every downstream step.</p>
+
+<div class="toolref">
+  <p class="tname">Otter.ai</p>
+  <p>The incumbent in meeting transcription. Produces usable transcripts with speaker diarization and integrates with Zoom, Google Meet, and Microsoft Teams.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Granola</p>
+  <p>A newer entrant that records locally and uses AI to generate structured notes from the transcript. Particularly effective for expert interviews because the output is already organized around substantive themes rather than raw dialogue.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Fireflies.ai</p>
+  <p>Comparable to Otter with stronger analytics features, including question extraction and sentiment indicators across a set of interviews.</p>
+</div>
+
+<h3>3.2 Multi-Document Synthesis with NotebookLM</h3>
+
+<p>NotebookLM deserves particular emphasis because it is the tool most underutilized by TAMID teams relative to its value. A notebook accepts up to approximately three hundred sources — PDFs, transcripts, web pages, pasted text — and produces responses grounded strictly in the attached material. The model will not hallucinate outside the source set. For interview synthesis across eight to twenty conversations, NotebookLM produces thematic summaries, verbatim quote extraction, and dissent identification more reliably than a general-purpose model.</p>
+
+<p>The recently introduced <em>audio overview</em> feature generates a conversational podcast from the source material, which is useful as a briefing format for team members who did not conduct the primary research.</p>
+
+<h3>3.3 Spreadsheet and Tabular Data</h3>
+
+<p>Quantitative cleaning tasks — normalizing columns across exports, reconciling inconsistent naming, computing derived metrics — are best handled by code-capable assistants rather than conversational ones.</p>
+
+<ul>
+  <li><strong>ChatGPT Advanced Data Analysis</strong> (formerly Code Interpreter) executes Python against uploaded files in a sandboxed environment. It is the fastest path from a messy CSV to a clean one.</li>
+  <li><strong>Claude Code</strong> offers equivalent capability via the command line and is preferred when the cleaning logic needs to be reproducible across multiple files or executed on sensitive data that should not leave a local environment.</li>
+  <li><strong>Rogo</strong> and <strong>Finchat</strong> are finance-specific assistants trained on financial data structures; both are useful for public-company analyses where the underlying data conforms to standard reporting formats.</li>
+</ul>
+
+<h3>3.4 Synthesis Discipline</h3>
+
+<p>Regardless of tool, synthesized outputs require a validation step that TAMID teams frequently skip. Each claim in a synthesized document must trace to a specific source. Claims that cannot be traced should be cut rather than rationalized. This discipline is more important than any prompt technique and is the primary differentiator between AI output that can be defended in client review and output that cannot.</p>
+
+<h2><span class="sectnum">4.</span>AI for Slide Drafting</h2>
+
+<p>Slide production consumes a disproportionate share of engagement time on most TAMID projects. AI-assisted workflows can compress this work substantially, though the naive approach — asking a model to "write a deck" — reliably produces generic output that falls below client expectations. The effective workflow separates storyline, layout, and visual asset generation into distinct stages with different tools.</p>
+
+<h3>4.1 Storyline Construction</h3>
+
+<p>The storyline is the sequence of action titles that carry the deliverable's argument. It should be constructed before any slide layout work begins. Claude Opus 4.7 is particularly well-suited to this stage because it can be asked to critique its own storyline for MECE violations, missing evidence, and unjustified logical leaps. A typical workflow is to draft action titles, ask the model to identify the weakest link in the argument, revise, and repeat until the model can no longer find a material gap.</p>
+
+<h3>4.2 Deck Generation Tools</h3>
+
+<div class="toolref">
+  <p class="tname">Gamma.app</p>
+  <p>The strongest end-to-end AI deck generator as of early 2026. Gamma accepts an outline or a raw document and produces a formatted deck with consistent theming, appropriate layout choices, and editable output. It exports cleanly to PowerPoint and Google Slides, which is essential because most clients will not accept a Gamma file as a final deliverable.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Plus AI for Google Slides</p>
+  <p>A Google Slides plugin that generates slides in-place. Preferred when the chapter's house style is already encoded in a Google Slides template, since Plus AI respects the template's theming in a way standalone generators do not.</p>
+</div>
+
+<div class="toolref">
+  <p class="tname">Tome and Beautiful.ai</p>
+  <p>Both remain credible options. Tome is stronger on narrative-driven decks; Beautiful.ai is stronger on structured business decks with dense data.</p>
+</div>
+
+<h3>4.3 Diagrams and Visual Assets</h3>
+
+<p>Diagram production has historically been the bottleneck in slide drafting. Two recent tools resolve this.</p>
+
+<ul>
+  <li><strong>Napkin.ai</strong> generates business diagrams — flowcharts, process maps, quadrants, matrices — directly from prose. The output is professional-grade and editable, and the tool is available on a free tier that is adequate for TAMID use.</li>
+  <li><strong>Mermaid syntax</strong>, generated by any frontier model and rendered in any Mermaid-compatible tool, produces technical diagrams (system architecture, entity relationships) at a quality level appropriate for client delivery.</li>
+</ul>
+
+<p>For quantitative visuals, <strong>ChatGPT Advanced Data Analysis</strong> produces matplotlib charts that can be restyled in Python or exported and refined in Figma or PowerPoint. For more polished chart output, <strong>Datawrapper</strong> remains the incumbent and integrates well with AI-cleaned datasets.</p>
+
+<h3>4.4 Voice and House Style</h3>
+
+<p>AI-drafted decks are instantly recognizable by default. Generic consulting vocabulary, evenly weighted bullet points, and defensive hedging are the characteristic signals. Neutralizing these requires feeding the model examples of the chapter's prior deliverables and instructing it to match observed tone. A reusable style guide — encoded as a Claude Project instruction or a Custom GPT — institutionalizes this across an engagement and removes the need to re-specify tone on every prompt.</p>
+
+<h2><span class="sectnum">5.</span>Risks and Ethical Guidelines</h2>
+
+<p>AI usage in a consulting context introduces risks that are categorically different from those associated with other productivity tools. A misconfigured reference manager produces incorrect citations; a misconfigured AI workflow exposes client data, fabricates evidence, or delivers recommendations the team cannot defend. The following guidelines address the failure modes that have caused reputational damage in professional services engagements over the past two years.</p>
+
+<h3>5.1 Data Confidentiality</h3>
+
+<p>The first question on any engagement is where client data is permitted to go. Free tiers of ChatGPT, Claude, and Gemini retain user inputs for model training by default and are inappropriate for confidential client material. Acceptable alternatives include:</p>
+
+<ul>
+  <li><strong>ChatGPT Enterprise</strong> and <strong>ChatGPT Team</strong>, both of which offer zero data retention and SOC 2 compliance.</li>
+  <li><strong>Claude for Work</strong> (Anthropic's Team and Enterprise tiers), which similarly excludes inputs from training.</li>
+  <li><strong>Microsoft 365 Copilot</strong>, operating within the client's tenant and inheriting its data governance policies.</li>
+  <li><strong>Azure OpenAI Service</strong> and <strong>Amazon Bedrock</strong>, which provide enterprise-controlled access to frontier models with configurable data residency.</li>
+</ul>
+
+<p>Where a client's confidentiality requirements cannot be met by any available tool, AI should not be used. This is a narrow case but a real one, and the discipline to recognize it is part of professional practice.</p>
+
+<h3>5.2 Hallucination and Citation Integrity</h3>
+
+<p>Frontier models produce confident, plausible, and occasionally fabricated content. The fabrication rate has declined substantially since early iterations of these systems but has not reached zero, and is higher in specialized domains such as law, medicine, and finance than in general knowledge tasks. The mitigations are straightforward:</p>
+
+<ol>
+  <li>Every numerical claim in a deliverable must trace to a specific source. A source-grading convention — for instance, A for primary documents, B for reputable secondary sources, C for inferred estimates — makes the integrity of the evidence visible in review.</li>
+  <li>Grounded tools (Perplexity, NotebookLM, Gemini with grounding enabled) should be preferred over ungrounded frontier models whenever citation integrity matters.</li>
+  <li>Quotes attributed to interview subjects must be verified against the source transcript. AI tools paraphrase verbatim quotes with measurable frequency, particularly in interview synthesis tasks.</li>
+</ol>
+
+<h3>5.3 Intellectual Property and Attribution</h3>
+
+<p>AI-generated content occupies uncertain legal ground in several jurisdictions. For TAMID engagements, two practical rules apply: generated text should be treated as a draft rather than as finished work, and generated imagery should be avoided in client deliverables unless the underlying tool's license explicitly permits commercial use. Internal disclosure of AI usage — to the team lead, at minimum — is the norm that protects the chapter from downstream attribution disputes.</p>
+
+<h3>5.4 Professional Judgment</h3>
+
+<p>The final guideline is the most consequential. AI systems produce recommendations on request regardless of whether those recommendations are supported by evidence. A consultant who cannot defend a recommendation without reference to the AI output has not completed the work; they have merely transcribed it. The appropriate test is whether the consultant can reproduce the reasoning, defend the assumptions, and respond to a skeptical client question without consulting the source conversation. Failure to meet this bar is the most common and most damaging failure mode in AI-assisted consulting work, and no tool or prompt technique mitigates it.</p>
+
+<h2>Conclusion</h2>
+
+<p>The tools described in this document collectively compress the time required for competitive research, data synthesis, and deliverable production by a factor that TAMID teams adopting them systematically report at between three and five. The compression is not automatic. It requires selecting the appropriate model for each task, configuring persistent workspaces at project kickoff, and maintaining the source-grading and validation discipline that separates defensible work from merely plausible work. Teams that internalize these practices produce deliverables comparable in quality to professional engagements; teams that treat AI as a generic shortcut produce output that is identifiable as such in the first review cycle.</p>
+
+<p>This playbook should be treated as a living document. The tool landscape shifts materially every quarter, and the recommendations above will require revision on a rolling basis. Chapters are encouraged to contribute observed improvements, new tools that prove their value on real engagements, and failure modes encountered in practice, so that subsequent versions reflect the accumulated experience of the TAMID network rather than the perspective of any single chapter.</p>
+
+<h2>References and Tool Directory</h2>
+<ol class="refs">
+  <li>Anthropic. Claude Opus 4.7, Sonnet 4.6, and Claude Projects. <a href="https://claude.ai">claude.ai</a></li>
+  <li>OpenAI. GPT-5.5, ChatGPT Advanced Data Analysis, Custom GPTs, Deep Research. <a href="https://chat.openai.com">chat.openai.com</a></li>
+  <li>Google. Gemini 3.1 Pro, NotebookLM, Gemini Deep Research. <a href="https://gemini.google.com">gemini.google.com</a> · <a href="https://notebooklm.google.com">notebooklm.google.com</a></li>
+  <li>Moonshot AI. Kimi K2. <a href="https://kimi.com">kimi.com</a></li>
+  <li>Artificial Analysis. Live model performance benchmarks. <a href="https://artificialanalysis.ai">artificialanalysis.ai</a></li>
+  <li>Perplexity AI. Perplexity Pro, Spaces, Deep Research. <a href="https://perplexity.ai">perplexity.ai</a></li>
+  <li>Exa. Semantic search API. <a href="https://exa.ai">exa.ai</a></li>
+  <li>AlphaSense. Expert call library and analyst transcript search. <a href="https://alpha-sense.com">alpha-sense.com</a></li>
+  <li>Otter.ai, Granola, Fireflies.ai. Meeting transcription and note generation.</li>
+  <li>Gamma, Plus AI, Tome, Beautiful.ai. AI-assisted deck generation.</li>
+  <li>Napkin.ai. AI diagram generation from prose. <a href="https://napkin.ai">napkin.ai</a></li>
+  <li>Rogo, Finchat. Finance-specific AI assistants.</li>
+  <li>Microsoft 365 Copilot; Azure OpenAI Service; Amazon Bedrock. Enterprise-grade frontier model access with configurable data governance.</li>
+</ol>
+
+</div>
+</section>
+
+<footer>
+  TAMID Consulting AI Playbook · <a href="index.html">Back to overview</a>
+</footer>
+
+</body>
+</html>

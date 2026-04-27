@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prompt Library — TAMID Consulting AI Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">TAMID Consulting · <span>AI Playbook</span></div>
+    <ul>
+      <li><a class="navlink" href="index.html">Home</a></li>
+      <li><a class="navlink" href="playbook.html">Playbook</a></li>
+      <li><a class="navlink" href="prompts.html">Prompts</a></li>
+      <li><a class="navlink" href="rollout.html">Rollout</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <a class="back-link" href="index.html">← Back to overview</a>
+  <span class="eyebrow">Deliverable 02</span>
+  <h1>TAMID-Specific Prompt Library</h1>
+  <p class="lede">
+    Five prompt workflows mapped to the work TAMID teams actually do. Each prompt is paired with
+    when to use it, the inputs to gather first, and how to validate the output before it ships.
+  </p>
+</section>
+
+<section>
+  <h2>Categories</h2>
+  <div class="grid">
+    <a class="card linkcard" href="#sizing"><div class="tag">01</div><h3>Market Sizing</h3><p style="color:var(--ink-dim);margin:0;">TAM / SAM / SOM with defensible assumptions.</p></a>
+    <a class="card linkcard" href="#segment"><div class="tag">02</div><h3>Customer Segmentation</h3><p style="color:var(--ink-dim);margin:0;">Actionable segments, not demographic wallpaper.</p></a>
+    <a class="card linkcard" href="#swot"><div class="tag">03</div><h3>SWOT</h3><p style="color:var(--ink-dim);margin:0;">Evidence-backed, specific to the company.</p></a>
+    <a class="card linkcard" href="#finance"><div class="tag">04</div><h3>Financial Modeling Logic</h3><p style="color:var(--ink-dim);margin:0;">Structure first, numbers second.</p></a>
+    <a class="card linkcard" href="#interview"><div class="tag">05</div><h3>Interview Synthesis</h3><p style="color:var(--ink-dim);margin:0;">Themes, verbatim quotes, dissent.</p></a>
+  </div>
+</section>
+
+<section id="sizing">
+  <div class="prompt">
+    <h3>Market Sizing <span class="pill">TAM / SAM / SOM</span></h3>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Early-stage strategy projects, go-to-market decks, investor-facing slides.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Product description, target geography, pricing assumption, ICP definition.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Every number must trace to a row in the assumptions table with a graded source.</p>
+<pre>You are a consulting analyst. Estimate the TAM, SAM, and SOM for [PRODUCT]
+in [GEOGRAPHY], serving [ICP], priced at [PRICE].
+
+Use both methods:
+1. Top-down: cite industry reports, name them explicitly.
+2. Bottom-up: # of target customers × adoption rate × ACV.
+
+Output format:
+- Numbered assumption table: assumption | value | source | grade (A/B/C)
+- TAM / SAM / SOM with the math shown
+- Flag the 3 assumptions most likely to break the estimate and why.
+
+If you cannot source a number, label it ESTIMATED and explain the logic.
+Do not invent reports or statistics.</pre>
+  </div>
+</section>
+
+<section id="segment">
+  <div class="prompt">
+    <h3>Customer Segmentation <span class="pill">Growth</span></h3>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Go-to-market targeting, prioritization decks, ICP workshops.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Product description, known customer data (if any), business model.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Reject any segment defined only by demographics. Each must have a distinct job-to-be-done.</p>
+<pre>Segment the customer base for [PRODUCT] into 4–6 groups.
+
+Each segment must include:
+- Name (descriptive, not generic)
+- Core job-to-be-done (what are they hiring this product to do?)
+- Buying trigger (what event makes them start looking?)
+- Willingness to pay (relative: low / mid / high, with reasoning)
+- Acquisition channel most likely to reach them
+- Why this segment is meaningfully different from the others
+
+Then rank the segments by (expected LTV × reachability) and recommend
+the top 2 to target first. Justify the ranking.
+
+Reject purely demographic segments ("women 25–34"). Every segment must
+map to a behavior or situation.</pre>
+  </div>
+</section>
+
+<section id="swot">
+  <div class="prompt">
+    <h3>SWOT <span class="pill">Strategy</span></h3>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Strategic diagnostic, competitive positioning, board prep.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Company materials, recent news, competitor summary.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> If an entry could apply to any generic competitor, cut it.</p>
+<pre>Produce a SWOT analysis for [COMPANY] given the materials below.
+
+Rules:
+- Every entry must be specific enough that it could NOT apply to a
+  generic competitor in the same industry.
+- Every entry must cite the source or observation it is grounded in.
+- Label each entry as EVIDENCED (based on the materials) or INFERRED
+  (reasonable implication). Err toward cutting INFERRED entries.
+- Provide exactly 3 entries per quadrant — force yourself to prioritize.
+
+After the SWOT, write 2 paragraphs:
+1. The single most important strategic implication.
+2. The 3 follow-up questions you would ask the client next.</pre>
+  </div>
+</section>
+
+<section id="finance">
+  <div class="prompt">
+    <h3>Financial Modeling Logic <span class="pill">Modeling</span></h3>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Before opening Excel. AI structures the model; you build it.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Business model, revenue streams, known unit economics, time horizon.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Sanity-check driver ranges against comparable businesses before modeling.</p>
+<pre>Design the structure of a 3-statement financial model for [COMPANY].
+I will build it in Excel — you are specifying the logic.
+
+Provide:
+1. Revenue model: every stream, its volume driver, and its price driver.
+2. Cost model: fixed vs. variable costs, each tied to a driver.
+3. Working capital assumptions: DSO, DPO, inventory days.
+4. CapEx schedule and depreciation approach.
+5. Cash flow bridge: how net income reconciles to cash.
+6. Sensitivity inputs: the 3 drivers most worth flexing, with
+   realistic low/base/high values and reasoning for each range.
+
+Call out any assumption I will need external data to ground, and
+suggest where to find it (10-K, industry benchmark, etc).</pre>
+  </div>
+</section>
+
+<section id="interview">
+  <div class="prompt">
+    <h3>Interview Synthesis <span class="pill">Qualitative</span></h3>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Primary research projects, customer discovery, expert interviews.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Transcripts (use an approved transcription tool), interviewee roles, research questions.</p>
+    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Spot-check 3 quotes against the source transcripts before using. AI occasionally paraphrases.</p>
+<pre>Given these [N] interview transcripts, extract:
+
+1. Top 5 recurring themes, ranked by frequency of mention.
+2. For each theme: one representative verbatim quote + speaker role.
+3. Dissenting views: any themes where interviewees disagreed, with
+   both sides quoted.
+4. Weak signals: themes mentioned by only 1 interviewee but that seem
+   potentially important — label explicitly as weak signal.
+5. Open questions for follow-up interviews.
+
+Rules:
+- Do not invent or paraphrase quotes. If you cannot find a verbatim,
+  say so.
+- Do not merge themes to reach 5 — list fewer if the data supports
+  fewer.
+- Preserve speaker anonymity (use role labels, not names).</pre>
+  </div>
+</section>
+
+<footer>
+  TAMID Consulting AI Playbook · <a href="index.html">Back to overview</a>
+</footer>
+
+</body>
+</html>

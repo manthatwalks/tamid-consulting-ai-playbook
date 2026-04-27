@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TAMID Consulting AI Playbook</title>
+<meta name="description" content="A practical AI toolkit tailored for TAMID consulting teams." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  .slide-anchor { scroll-margin-top: 88px; }
+  .tools-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-top: 8px;
+  }
+  .tools-table th, .tools-table td {
+    text-align: left; padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px; vertical-align: top;
+  }
+  .tools-table th {
+    color: var(--ink-dim); font-weight: 600;
+    background: #FAFAF8;
+    font-size: 12px; letter-spacing: -0.005em;
+  }
+  .tools-table tr:last-child td { border-bottom: none; }
+  .tools-table td:first-child { color: var(--ink); font-weight: 600; width: 32%; }
+  .tools-table td:last-child { color: var(--ink-dim); }
+  .deeper {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 22px;
+    color: var(--accent); font-size: 14px; font-weight: 600;
+    transition: gap 0.15s ease;
+  }
+  .deeper:hover { opacity: 1; gap: 8px; }
+  .problem-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 22px;
+  }
+  .problem-card {
+    background: var(--card); border: 1px solid var(--border);
+    padding: 22px; border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+  .problem-card .lbl {
+    display: inline-block;
+    font-size: 11px; font-weight: 600; letter-spacing: -0.005em;
+    color: var(--accent-2); background: var(--accent-2-soft);
+    padding: 3px 10px; border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  .problem-card p { margin: 0; color: var(--ink-dim); font-size: 14px; line-height: 1.5; }
+
+  .closing {
+    text-align: center; padding: 96px 28px 120px;
+    max-width: 720px; margin: 0 auto;
+  }
+  .closing h2 {
+    font-size: clamp(32px, 4.4vw, 48px);
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .closing p { color: var(--ink-dim); max-width: 520px; margin: 0 auto; font-size: 16px; }
+  .url-pill {
+    display: inline-block; margin-top: 28px;
+    padding: 14px 24px; border-radius: 14px;
+    background: var(--ink); color: var(--bg-soft);
+    font-weight: 600; font-size: 15px;
+    letter-spacing: -0.01em;
+    box-shadow: var(--shadow-md);
+    transition: all 0.15s ease;
+  }
+  .url-pill:hover { opacity: 1; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">TAMID Consulting · <span>AI Playbook</span></div>
+    <ul>
+      <li><a class="navlink" href="#problem">Problem</a></li>
+      <li><a class="navlink" href="#deliverables">Deliverables</a></li>
+      <li><a class="navlink" href="#playbook">Playbook</a></li>
+      <li><a class="navlink" href="#prompts">Prompts</a></li>
+      <li><a class="navlink" href="#rollout">Rollout</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Title -->
+<section class="hero slide-anchor" id="top">
+  <h1>TAMID Consulting AI Playbook</h1>
+  <p class="lede">A practical AI toolkit for TAMID consulting teams — covering model selection, research workflows, prompt patterns, and chapter rollout.</p>
+</section>
+
+<!-- The Problem -->
+<section class="slide-anchor" id="problem">
+  <h2>AI usage across chapters is inconsistent and shallow.</h2>
+  <p class="section-sub">Most TAMID teams already use AI in some form. Few use it well.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="lbl">Tool Choice</div>
+      <p>Teams default to whichever interface or tool they heard about or popped up first — not necessarily the right tool for the task.</p>
+    </div>
+    <div class="problem-card">
+      <div class="lbl">Source Discipline</div>
+      <p>Numbers go into decks unsourced. Hallucinated statistics survive into client deliverables.</p>
+    </div>
+    <div class="problem-card">
+      <div class="lbl">Quality Variance</div>
+      <p>Output ranges from excellent to obviously generic — sometimes within the same project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- The Four Deliverables -->
+<section class="slide-anchor" id="deliverables">
+  <h2>Our deliverables:</h2>
+
+  <div class="grid grid-2">
+    <a class="card linkcard" href="playbook.html">
+      <div class="tag">01 · Reference</div>
+      <h3>The Playbook</h3>
+      <p style="color:var(--ink-dim);margin:6px 0 0;">Research-paper-style guide covering model selection, competitive research, data synthesis, slide drafting, and ethics.</p>
+    </a>
+    <a class="card linkcard" href="prompts.html">
+      <div class="tag">02 · Daily Use</div>
+      <h3>Prompt Library</h3>
+      <p style="color:var(--ink-dim);margin:6px 0 0;">Five prompt workflows for the most common TAMID tasks.</p>
+    </a>
+    <div class="card">
+      <div class="tag">03 · Teaching</div>
+      <h3>Workshop</h3>
+      <p style="color:var(--ink-dim);margin:6px 0 0;">A 20–30 min interactive lesson, structured as a live case sprint.</p>
+    </div>
+    <a class="card linkcard" href="rollout.html">
+      <div class="tag">04 · Adoption</div>
+      <h3>Rollout Guide</h3>
+      <p style="color:var(--ink-dim);margin:6px 0 0;">A one-semester adoption plan a chapter lead can run solo.</p>
+    </a>
+  </div>
+</section>
+
+<!-- Inside the Playbook -->
+<section class="slide-anchor" id="playbook">
+  <h2>Five sections. Real tools, not generic advice.</h2>
+  <p class="section-sub">Every section names the specific services TAMID consultants should be reaching for.</p>
+
+  <h3 style="margin-top:8px;margin-bottom:10px;font-size:14px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.05em;">Models by use case</h3>
+  <table class="tools-table">
+    <thead>
+      <tr><th>Task</th><th>Recommended models</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Deep reasoning</td><td>Claude Opus 4.7 · GPT-5.5</td></tr>
+      <tr><td>Daily drafting</td><td>Claude Sonnet 4.6</td></tr>
+      <tr><td>Fast / shallow work</td><td>Kimi K2 · Claude Haiku</td></tr>
+      <tr><td>Long context (200k+)</td><td>Gemini 3.1 Pro</td></tr>
+      <tr><td>Cited web research</td><td>Perplexity Pro</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--ink-faint);margin-top:10px;">
+    Models change fast. Live reference: <a href="https://artificialanalysis.ai" target="_blank" rel="noopener">artificialanalysis.ai</a>
+  </p>
+
+  <h3 style="margin-top:36px;margin-bottom:10px;font-size:14px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.05em;">Tools by workflow</h3>
+  <table class="tools-table">
+    <thead>
+      <tr><th>Section</th><th>Tools we recommend</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Competitive Analysis</td><td>OpenAI Deep Research · Gemini Deep Research · Exa.ai · AlphaSense</td></tr>
+      <tr><td>Data Synthesis</td><td>NotebookLM · Granola · ChatGPT Advanced Data Analysis · Claude Code</td></tr>
+      <tr><td>Slide Drafting</td><td>Gamma · Plus AI · Napkin.ai · Mermaid</td></tr>
+      <tr><td>Risk + Ethics</td><td>Enterprise tiers · source grading · citation integrity</td></tr>
+    </tbody>
+  </table>
+
+  <a class="deeper" href="playbook.html">Read the full playbook →</a>
+</section>
+
+<!-- The Prompt Library -->
+<section class="slide-anchor" id="prompts">
+  <h2>Five prompt workflows.</h2>
+  <p class="section-sub">Market sizing · Customer segmentation · SWOT · Financial modeling · Interview synthesis. Here's one in full.</p>
+
+  <div class="prompt">
+    <h3>Market Sizing <span class="pill">TAM / SAM / SOM</span></h3>
+    <p style="color:var(--ink-dim);margin:4px 0 0;">Forces the model to do what it's bad at by default — citing sources, grading evidence, flagging weak assumptions.</p>
+<pre>You are a consulting analyst. Estimate the TAM, SAM, and SOM for [PRODUCT]
+in [GEOGRAPHY], serving [ICP], priced at [PRICE].
+
+Use both methods:
+1. Top-down: cite industry reports, name them explicitly.
+2. Bottom-up: # of target customers × adoption rate × ACV.
+
+Output format:
+- Numbered assumption table: assumption | value | source | grade (A/B/C)
+- TAM / SAM / SOM with the math shown
+- Flag the 3 assumptions most likely to break the estimate and why.
+
+If you cannot source a number, label it ESTIMATED and explain the logic.
+Do not invent reports or statistics.</pre>
+  </div>
+
+  <a class="deeper" href="prompts.html">Browse all five prompts →</a>
+</section>
+
+<!-- Rollout -->
+<section class="slide-anchor" id="rollout">
+  <h2>Adoption is just distribution.</h2>
+  <p class="section-sub">TAMID's existing structure does the work. The playbook flows top-down through the chapter — no special programming required.</p>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="wk">Director of Consulting</div>
+      <div>
+        <h3>Send it out</h3>
+        <p style="color:var(--ink-dim);margin:0;">Shares the playbook with project leads at the start of the semester. One message, one link.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="wk">Project Leads</div>
+      <div>
+        <h3>Read it, brief the team</h3>
+        <p style="color:var(--ink-dim);margin:0;">Reviews the playbook themselves, then walks their project members through the parts most relevant to the engagement.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="wk">Project Members</div>
+      <div>
+        <h3>Use it on real work</h3>
+        <p style="color:var(--ink-dim);margin:0;">Applies the model recommendations, prompt library, and ethical guardrails to live client deliverables.</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="deeper" href="rollout.html">Full rollout guide →</a>
+</section>
+
+<!-- Closing -->
+<section class="closing slide-anchor">
+  <h2>Bookmark this page.</h2>
+  <p>The playbook, prompt library, and rollout guide are all one click away. Start with whichever your chapter needs most.</p>
+  <a class="url-pill" href="#top">TAMID Consulting AI Playbook</a>
+</section>
+
+<footer>
+  TAMID Consulting AI Playbook · <a href="playbook.html">Playbook</a> · <a href="prompts.html">Prompts</a> · <a href="rollout.html">Rollout</a>
+</footer>
+
+</body>
+</html>
