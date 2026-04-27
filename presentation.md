@@ -9,7 +9,7 @@ Format: Gamma-compatible markdown. Paste into [gamma.app](https://gamma.app) →
 
 A practical AI toolkit for TAMID consulting teams.
 
-**Follow along →** `[YOUR DEPLOYED URL]`
+**Follow along →** **tamid-consulting-ai-playbook.vercel.app**
 
 > **Speaker notes (~30 sec):** "Before I start, pull out your phone or laptop and open this link. Everything I'm about to walk through is on the site, so you can follow along, click into anything that catches your eye, and have it as a reference after the session. The site is the project. The slides are the tour."
 
@@ -97,7 +97,7 @@ Five workflows. Every prompt has inputs, when to use it, and how to validate the
 
 ## Take It With You
 
-**TAMID Consulting AI Playbook →** `[YOUR DEPLOYED URL]`
+**TAMID Consulting AI Playbook →** **tamid-consulting-ai-playbook.vercel.app**
 
 - Read the full playbook
 - Copy any prompt
@@ -124,5 +124,5 @@ Five workflows. Every prompt has inputs, when to use it, and how to validate the
 
 ## Replace Before Presenting
 
-- `[YOUR DEPLOYED URL]` appears on slide 1 and slide 8. Deploy the site (Vercel or Netlify — drag-and-drop, ~1 min, free) and paste the URL in both places.
-- Optional: generate a QR code from the deployed URL and add it to slide 1 for in-room viewing.
+- Site is live at **tamid-consulting-ai-playbook.vercel.app** — already populated on slide 1 and slide 8.
+- Optional: generate a QR code (e.g., via [qr-code-generator.com](https://www.qr-code-generator.com)) pointing to the URL and add it to slide 1 for in-room viewing.
