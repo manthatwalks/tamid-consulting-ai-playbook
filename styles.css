@@ -259,23 +259,24 @@ h4 {
 }
 .card.linkcard:hover::after { transform: translateX(4px); opacity: 1; }
 
-/* Tag pill (default — emerald soft) */
+/* Tag pill (default — dark navy) */
 .card .tag {
   display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--font-sans);
   font-size: 11px; font-weight: 600;
-  letter-spacing: -0.005em;
-  color: var(--accent-ink);
-  background: var(--accent-soft);
+  letter-spacing: 0.01em;
+  color: #cbd5e1;
+  background: #1e293b;
   padding: 5px 11px;
   border-radius: 999px;
   margin-bottom: 14px;
 }
 
-/* Solid emerald variant (for "Signal 1" pill in screenshot) */
+/* Solid emerald variant (for "Signal 1" / "Signal 2" / "Signal 3" pills) */
 .card .tag.tag-solid {
   background: var(--accent);
   color: #fff;
+  letter-spacing: -0.005em;
 }
 
 /* Card content */
@@ -627,11 +628,11 @@ pre {
 .dl-card .ftype {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--accent-ink);
-  background: var(--accent-soft);
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  background: #1e293b;
   padding: 4px 10px;
   border-radius: 6px;
   margin-bottom: 14px;
