@@ -5,102 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>TAMID Consulting AI Playbook</title>
 <meta name="description" content="A practical AI toolkit tailored for TAMID consulting teams." />
-<link rel="stylesheet" href="styles.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  .slide-anchor { scroll-margin-top: 88px; }
-  .tools-table {
-    width: 100%; border-collapse: separate; border-spacing: 0;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 18px; overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    margin-top: 8px;
-  }
-  .tools-table th, .tools-table td {
-    text-align: left; padding: 16px 22px;
-    border-bottom: 1px solid var(--border);
-    font-size: 14px; vertical-align: top;
-  }
-  .tools-table th {
-    color: var(--ink-dim); font-weight: 600;
-    background: #FAFAF8;
-    font-size: 12px; letter-spacing: -0.005em;
-  }
-  .tools-table tr:last-child td { border-bottom: none; }
-  .tools-table td:first-child { color: var(--ink); font-weight: 600; width: 32%; }
-  .tools-table td:last-child { color: var(--ink-dim); }
-  .deeper {
-    display: inline-flex; align-items: center; gap: 4px;
-    margin-top: 22px;
-    color: var(--accent); font-size: 14px; font-weight: 600;
-    transition: gap 0.15s ease;
-  }
-  .deeper:hover { opacity: 1; gap: 8px; }
-  .problem-grid {
-    display: grid; gap: 14px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin-top: 22px;
-  }
-  .problem-card {
-    background: var(--card); border: 1px solid var(--border);
-    padding: 22px; border-radius: 16px;
-    box-shadow: var(--shadow-sm);
-  }
-  .problem-card .lbl {
-    display: inline-block;
-    font-size: 11px; font-weight: 600; letter-spacing: -0.005em;
-    color: var(--accent-2); background: var(--accent-2-soft);
-    padding: 3px 10px; border-radius: 999px;
-    margin-bottom: 10px;
-  }
-  .problem-card p { margin: 0; color: var(--ink-dim); font-size: 14px; line-height: 1.5; }
-
-  .closing {
-    text-align: center; padding: 96px 28px 120px;
-    max-width: 720px; margin: 0 auto;
-  }
-  .closing h2 {
-    font-size: clamp(32px, 4.4vw, 48px);
-    color: var(--ink);
-    margin-bottom: 14px;
-  }
-  .closing p { color: var(--ink-dim); max-width: 520px; margin: 0 auto; font-size: 16px; }
-  .url-pill {
-    display: inline-block; margin-top: 28px;
-    padding: 14px 24px; border-radius: 14px;
-    background: var(--ink); color: var(--bg-soft);
-    font-weight: 600; font-size: 15px;
-    letter-spacing: -0.01em;
-    box-shadow: var(--shadow-md);
-    transition: all 0.15s ease;
-  }
-  .url-pill:hover { opacity: 1; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand">TAMID Consulting · <span>AI Playbook</span></div>
-    <ul>
-      <li><a class="navlink" href="#problem">Problem</a></li>
-      <li><a class="navlink" href="#deliverables">Deliverables</a></li>
-      <li><a class="navlink" href="#playbook">Playbook</a></li>
-      <li><a class="navlink" href="#prompts">Prompts</a></li>
-      <li><a class="navlink" href="#rollout">Rollout</a></li>
+<header class="hero-header">
+  <div class="hero-nav">
+    <a href="index.html" class="brand">TAMID Consulting · <span>AI Playbook</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="playbook.html">Playbook</a></li>
+      <li><a href="prompts.html">Prompts</a></li>
+      <li><a href="workshop.html">Workshop</a></li>
+      <li><a href="rollout.html">Rollout</a></li>
     </ul>
+  </div>
+  <div class="hero-content hero-content-lg" id="top">
+    <span class="eyebrow">An AI Toolkit for TAMID</span>
+    <h1>TAMID Consulting<br/>AI Playbook</h1>
+    <p class="lede">A practical AI toolkit for TAMID consulting teams — covering model selection, research workflows, prompt patterns, and chapter rollout.</p>
   </div>
 </header>
 
-<!-- Title -->
-<section class="hero slide-anchor" id="top">
-  <h1>TAMID Consulting AI Playbook</h1>
-  <p class="lede">A practical AI toolkit for TAMID consulting teams — covering model selection, research workflows, prompt patterns, and chapter rollout.</p>
-</section>
-
-<!-- The Problem -->
 <section class="slide-anchor" id="problem">
   <h2>AI usage across chapters is inconsistent and shallow.</h2>
   <p class="section-sub">Most TAMID teams already use AI in some form. Few use it well.</p>
@@ -121,40 +50,39 @@
   </div>
 </section>
 
-<!-- The Four Deliverables -->
 <section class="slide-anchor" id="deliverables">
-  <h2>Our deliverables:</h2>
+  <h2>Our deliverables</h2>
+  <p class="section-sub">Four artifacts. Reference, daily use, teaching, adoption.</p>
 
   <div class="grid grid-2">
     <a class="card linkcard" href="playbook.html">
-      <div class="tag">01 · Reference</div>
+      <span class="tag">01 · Reference</span>
       <h3>The Playbook</h3>
-      <p style="color:var(--ink-dim);margin:6px 0 0;">Research-paper-style guide covering model selection, competitive research, data synthesis, slide drafting, and ethics.</p>
+      <p>Research-paper-style guide covering model selection, competitive research, data synthesis, slide drafting, and ethics.</p>
     </a>
     <a class="card linkcard" href="prompts.html">
-      <div class="tag">02 · Daily Use</div>
+      <span class="tag">02 · Daily Use</span>
       <h3>Prompt Library</h3>
-      <p style="color:var(--ink-dim);margin:6px 0 0;">Five prompt workflows for the most common TAMID tasks.</p>
+      <p>Five prompt workflows for the most common TAMID tasks.</p>
     </a>
-    <div class="card">
-      <div class="tag">03 · Teaching</div>
+    <a class="card linkcard" href="workshop.html">
+      <span class="tag">03 · Teaching</span>
       <h3>Workshop</h3>
-      <p style="color:var(--ink-dim);margin:6px 0 0;">A 20–30 min interactive lesson, structured as a live case sprint.</p>
-    </div>
+      <p>A 20–30 min interactive lesson, structured as a live case sprint.</p>
+    </a>
     <a class="card linkcard" href="rollout.html">
-      <div class="tag">04 · Adoption</div>
+      <span class="tag">04 · Adoption</span>
       <h3>Rollout Guide</h3>
-      <p style="color:var(--ink-dim);margin:6px 0 0;">A one-semester adoption plan a chapter lead can run solo.</p>
+      <p>A one-semester adoption plan a chapter lead can run solo.</p>
     </a>
   </div>
 </section>
 
-<!-- Inside the Playbook -->
 <section class="slide-anchor" id="playbook">
   <h2>Five sections. Real tools, not generic advice.</h2>
   <p class="section-sub">Every section names the specific services TAMID consultants should be reaching for.</p>
 
-  <h3 style="margin-top:8px;margin-bottom:10px;font-size:14px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.05em;">Models by use case</h3>
+  <h3 style="margin-top:8px;margin-bottom:10px;font-size:12px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.05em;">Models by use case</h3>
   <table class="tools-table">
     <thead>
       <tr><th>Task</th><th>Recommended models</th></tr>
@@ -171,7 +99,7 @@
     Models change fast. Live reference: <a href="https://artificialanalysis.ai" target="_blank" rel="noopener">artificialanalysis.ai</a>
   </p>
 
-  <h3 style="margin-top:36px;margin-bottom:10px;font-size:14px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.05em;">Tools by workflow</h3>
+  <h3 style="margin-top:36px;margin-bottom:10px;font-size:12px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.05em;">Tools by workflow</h3>
   <table class="tools-table">
     <thead>
       <tr><th>Section</th><th>Tools we recommend</th></tr>
@@ -187,14 +115,18 @@
   <a class="deeper" href="playbook.html">Read the full playbook →</a>
 </section>
 
-<!-- The Prompt Library -->
 <section class="slide-anchor" id="prompts">
   <h2>Five prompt workflows.</h2>
   <p class="section-sub">Market sizing · Customer segmentation · SWOT · Financial modeling · Interview synthesis. Here's one in full.</p>
 
   <div class="prompt">
     <h3>Market Sizing <span class="pill">TAM / SAM / SOM</span></h3>
-    <p style="color:var(--ink-dim);margin:4px 0 0;">Forces the model to do what it's bad at by default — citing sources, grading evidence, flagging weak assumptions.</p>
+    <p>Forces the model to do what it's bad at by default — citing sources, grading evidence, flagging weak assumptions.</p>
+    <div class="code-block">
+      <div class="code-block-head">
+        <span>Prompt</span>
+        <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy to clipboard</button>
+      </div>
 <pre>You are a consulting analyst. Estimate the TAM, SAM, and SOM for [PRODUCT]
 in [GEOGRAPHY], serving [ICP], priced at [PRICE].
 
@@ -209,12 +141,12 @@ Output format:
 
 If you cannot source a number, label it ESTIMATED and explain the logic.
 Do not invent reports or statistics.</pre>
+    </div>
   </div>
 
   <a class="deeper" href="prompts.html">Browse all five prompts →</a>
 </section>
 
-<!-- Rollout -->
 <section class="slide-anchor" id="rollout">
   <h2>Adoption is just distribution.</h2>
   <p class="section-sub">TAMID's existing structure does the work. The playbook flows top-down through the chapter — no special programming required.</p>
@@ -224,21 +156,21 @@ Do not invent reports or statistics.</pre>
       <div class="wk">Director of Consulting</div>
       <div>
         <h3>Send it out</h3>
-        <p style="color:var(--ink-dim);margin:0;">Shares the playbook with project leads at the start of the semester. One message, one link.</p>
+        <p>Shares the playbook with project leads at the start of the semester. One message, one link.</p>
       </div>
     </div>
     <div class="phase">
       <div class="wk">Project Leads</div>
       <div>
         <h3>Read it, brief the team</h3>
-        <p style="color:var(--ink-dim);margin:0;">Reviews the playbook themselves, then walks their project members through the parts most relevant to the engagement.</p>
+        <p>Reviews the playbook themselves, then walks their project members through the parts most relevant to the engagement.</p>
       </div>
     </div>
     <div class="phase">
       <div class="wk">Project Members</div>
       <div>
         <h3>Use it on real work</h3>
-        <p style="color:var(--ink-dim);margin:0;">Applies the model recommendations, prompt library, and ethical guardrails to live client deliverables.</p>
+        <p>Applies the model recommendations, prompt library, and ethical guardrails to live client deliverables.</p>
       </div>
     </div>
   </div>
@@ -246,16 +178,35 @@ Do not invent reports or statistics.</pre>
   <a class="deeper" href="rollout.html">Full rollout guide →</a>
 </section>
 
-<!-- Closing -->
 <section class="closing slide-anchor">
   <h2>Bookmark this page.</h2>
-  <p>The playbook, prompt library, and rollout guide are all one click away. Start with whichever your chapter needs most.</p>
+  <p>The playbook, prompt library, workshop, and rollout guide are all one click away. Start with whichever your chapter needs most.</p>
   <a class="url-pill" href="#top">TAMID Consulting AI Playbook</a>
 </section>
 
 <footer>
-  TAMID Consulting AI Playbook · <a href="playbook.html">Playbook</a> · <a href="prompts.html">Prompts</a> · <a href="rollout.html">Rollout</a>
+  TAMID Consulting AI Playbook · <a href="playbook.html">Playbook</a> · <a href="prompts.html">Prompts</a> · <a href="workshop.html">Workshop</a> · <a href="rollout.html">Rollout</a>
 </footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var block = btn.closest('.code-block');
+      if (!block) return;
+      var pre = block.querySelector('pre');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent).then(function () {
+        var original = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
