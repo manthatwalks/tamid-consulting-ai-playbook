@@ -6,50 +6,58 @@
 <title>Prompt Library — TAMID Consulting AI Playbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand">TAMID Consulting · <span>AI Playbook</span></div>
-    <ul>
-      <li><a class="navlink" href="index.html">Home</a></li>
-      <li><a class="navlink" href="playbook.html">Playbook</a></li>
-      <li><a class="navlink" href="prompts.html">Prompts</a></li>
-      <li><a class="navlink" href="rollout.html">Rollout</a></li>
+<header class="hero-header">
+  <div class="hero-nav">
+    <a href="index.html" class="brand">TAMID Consulting · <span>AI Playbook</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="playbook.html">Playbook</a></li>
+      <li><a href="prompts.html" class="active">Prompts</a></li>
+      <li><a href="workshop.html">Workshop</a></li>
+      <li><a href="rollout.html">Rollout</a></li>
     </ul>
+  </div>
+  <div class="hero-content">
+    <a class="back-link" href="index.html">← Back to overview</a>
+    <span class="eyebrow">Deliverable 02</span>
+    <h1>TAMID-Specific Prompt Library</h1>
   </div>
 </header>
 
-<section class="hero">
-  <a class="back-link" href="index.html">← Back to overview</a>
-  <span class="eyebrow">Deliverable 02</span>
-  <h1>TAMID-Specific Prompt Library</h1>
-  <p class="lede">
+<div class="lede-quote">
+  <p>
     Five prompt workflows mapped to the work TAMID teams actually do. Each prompt is paired with
     when to use it, the inputs to gather first, and how to validate the output before it ships.
   </p>
-</section>
+</div>
 
-<section>
+<section class="tight">
   <h2>Categories</h2>
   <div class="grid">
-    <a class="card linkcard" href="#sizing"><div class="tag">01</div><h3>Market Sizing</h3><p style="color:var(--ink-dim);margin:0;">TAM / SAM / SOM with defensible assumptions.</p></a>
-    <a class="card linkcard" href="#segment"><div class="tag">02</div><h3>Customer Segmentation</h3><p style="color:var(--ink-dim);margin:0;">Actionable segments, not demographic wallpaper.</p></a>
-    <a class="card linkcard" href="#swot"><div class="tag">03</div><h3>SWOT</h3><p style="color:var(--ink-dim);margin:0;">Evidence-backed, specific to the company.</p></a>
-    <a class="card linkcard" href="#finance"><div class="tag">04</div><h3>Financial Modeling Logic</h3><p style="color:var(--ink-dim);margin:0;">Structure first, numbers second.</p></a>
-    <a class="card linkcard" href="#interview"><div class="tag">05</div><h3>Interview Synthesis</h3><p style="color:var(--ink-dim);margin:0;">Themes, verbatim quotes, dissent.</p></a>
+    <a class="card linkcard" href="#sizing"><span class="tag">01</span><h3>Market Sizing</h3><p>TAM / SAM / SOM with defensible assumptions.</p></a>
+    <a class="card linkcard" href="#segment"><span class="tag">02</span><h3>Customer Segmentation</h3><p>Actionable segments, not demographic wallpaper.</p></a>
+    <a class="card linkcard" href="#swot"><span class="tag">03</span><h3>SWOT</h3><p>Evidence-backed, specific to the company.</p></a>
+    <a class="card linkcard" href="#finance"><span class="tag">04</span><h3>Financial Modeling Logic</h3><p>Structure first, numbers second.</p></a>
+    <a class="card linkcard" href="#interview"><span class="tag">05</span><h3>Interview Synthesis</h3><p>Themes, verbatim quotes, dissent.</p></a>
   </div>
 </section>
 
-<section id="sizing">
+<section id="sizing" class="slide-anchor">
   <div class="prompt">
     <h3>Market Sizing <span class="pill">TAM / SAM / SOM</span></h3>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Early-stage strategy projects, go-to-market decks, investor-facing slides.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Product description, target geography, pricing assumption, ICP definition.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Every number must trace to a row in the assumptions table with a graded source.</p>
+    <p><strong>When to use:</strong> Early-stage strategy projects, go-to-market decks, investor-facing slides.</p>
+    <p><strong>Inputs to gather:</strong> Product description, target geography, pricing assumption, ICP definition.</p>
+    <p><strong>Validation:</strong> Every number must trace to a row in the assumptions table with a graded source.</p>
+    <div class="code-block">
+      <div class="code-block-head">
+        <span>Prompt</span>
+        <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy to clipboard</button>
+      </div>
 <pre>You are a consulting analyst. Estimate the TAM, SAM, and SOM for [PRODUCT]
 in [GEOGRAPHY], serving [ICP], priced at [PRICE].
 
@@ -64,15 +72,21 @@ Output format:
 
 If you cannot source a number, label it ESTIMATED and explain the logic.
 Do not invent reports or statistics.</pre>
+    </div>
   </div>
 </section>
 
-<section id="segment">
+<section id="segment" class="slide-anchor">
   <div class="prompt">
     <h3>Customer Segmentation <span class="pill">Growth</span></h3>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Go-to-market targeting, prioritization decks, ICP workshops.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Product description, known customer data (if any), business model.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Reject any segment defined only by demographics. Each must have a distinct job-to-be-done.</p>
+    <p><strong>When to use:</strong> Go-to-market targeting, prioritization decks, ICP workshops.</p>
+    <p><strong>Inputs to gather:</strong> Product description, known customer data (if any), business model.</p>
+    <p><strong>Validation:</strong> Reject any segment defined only by demographics. Each must have a distinct job-to-be-done.</p>
+    <div class="code-block">
+      <div class="code-block-head">
+        <span>Prompt</span>
+        <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy to clipboard</button>
+      </div>
 <pre>Segment the customer base for [PRODUCT] into 4–6 groups.
 
 Each segment must include:
@@ -88,15 +102,21 @@ the top 2 to target first. Justify the ranking.
 
 Reject purely demographic segments ("women 25–34"). Every segment must
 map to a behavior or situation.</pre>
+    </div>
   </div>
 </section>
 
-<section id="swot">
+<section id="swot" class="slide-anchor">
   <div class="prompt">
     <h3>SWOT <span class="pill">Strategy</span></h3>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Strategic diagnostic, competitive positioning, board prep.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Company materials, recent news, competitor summary.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> If an entry could apply to any generic competitor, cut it.</p>
+    <p><strong>When to use:</strong> Strategic diagnostic, competitive positioning, board prep.</p>
+    <p><strong>Inputs to gather:</strong> Company materials, recent news, competitor summary.</p>
+    <p><strong>Validation:</strong> If an entry could apply to any generic competitor, cut it.</p>
+    <div class="code-block">
+      <div class="code-block-head">
+        <span>Prompt</span>
+        <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy to clipboard</button>
+      </div>
 <pre>Produce a SWOT analysis for [COMPANY] given the materials below.
 
 Rules:
@@ -110,15 +130,21 @@ Rules:
 After the SWOT, write 2 paragraphs:
 1. The single most important strategic implication.
 2. The 3 follow-up questions you would ask the client next.</pre>
+    </div>
   </div>
 </section>
 
-<section id="finance">
+<section id="finance" class="slide-anchor">
   <div class="prompt">
     <h3>Financial Modeling Logic <span class="pill">Modeling</span></h3>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Before opening Excel. AI structures the model; you build it.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Business model, revenue streams, known unit economics, time horizon.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Sanity-check driver ranges against comparable businesses before modeling.</p>
+    <p><strong>When to use:</strong> Before opening Excel. AI structures the model; you build it.</p>
+    <p><strong>Inputs to gather:</strong> Business model, revenue streams, known unit economics, time horizon.</p>
+    <p><strong>Validation:</strong> Sanity-check driver ranges against comparable businesses before modeling.</p>
+    <div class="code-block">
+      <div class="code-block-head">
+        <span>Prompt</span>
+        <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy to clipboard</button>
+      </div>
 <pre>Design the structure of a 3-statement financial model for [COMPANY].
 I will build it in Excel — you are specifying the logic.
 
@@ -133,15 +159,21 @@ Provide:
 
 Call out any assumption I will need external data to ground, and
 suggest where to find it (10-K, industry benchmark, etc).</pre>
+    </div>
   </div>
 </section>
 
-<section id="interview">
+<section id="interview" class="slide-anchor">
   <div class="prompt">
     <h3>Interview Synthesis <span class="pill">Qualitative</span></h3>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>When to use:</strong> Primary research projects, customer discovery, expert interviews.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Inputs to gather:</strong> Transcripts (use an approved transcription tool), interviewee roles, research questions.</p>
-    <p style="color:var(--ink-dim);margin:4px 0 0;"><strong>Validation:</strong> Spot-check 3 quotes against the source transcripts before using. AI occasionally paraphrases.</p>
+    <p><strong>When to use:</strong> Primary research projects, customer discovery, expert interviews.</p>
+    <p><strong>Inputs to gather:</strong> Transcripts (use an approved transcription tool), interviewee roles, research questions.</p>
+    <p><strong>Validation:</strong> Spot-check 3 quotes against the source transcripts before using. AI occasionally paraphrases.</p>
+    <div class="code-block">
+      <div class="code-block-head">
+        <span>Prompt</span>
+        <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy to clipboard</button>
+      </div>
 <pre>Given these [N] interview transcripts, extract:
 
 1. Top 5 recurring themes, ranked by frequency of mention.
@@ -158,12 +190,33 @@ Rules:
 - Do not merge themes to reach 5 — list fewer if the data supports
   fewer.
 - Preserve speaker anonymity (use role labels, not names).</pre>
+    </div>
   </div>
 </section>
 
 <footer>
   TAMID Consulting AI Playbook · <a href="index.html">Back to overview</a>
 </footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var block = btn.closest('.code-block');
+      if (!block) return;
+      var pre = block.querySelector('pre');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent).then(function () {
+        var original = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
